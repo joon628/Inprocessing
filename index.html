@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Integrated Inprocessing with LocalStorage (Disabled Prev/Next)</title>
+  <!-- Responsive viewport meta tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrated Inprocessing (Responsive)</title>
   <style>
     /* Basic reset & styling */
     * {
@@ -10,6 +12,7 @@
       margin: 0;
       padding: 0;
     }
+
     :root {
       /* Define some material-like color variables */
       --primary-color: #2196F3;   /* Material Blue 500 */
@@ -22,23 +25,21 @@
       --card-bg: #fff;
       --shadow-color: rgba(0,0,0,0.1);
     }
+
     body {
       font-family: "Roboto", "Arial", sans-serif;
       background: var(--light-bg);
-      height: 100vh; 
-      overflow: hidden; /* main body won't scroll; we handle scrolling in sections */
-      overflow-y: auto; 
+      /* removed: height: 100vh; overflow: hidden; */
+      overflow-x: hidden;  /* no horizontal scrolling */
       -webkit-font-smoothing: antialiased;
-      color: var(--text-color); 
+      color: var(--text-color);
     }
 
     .page-content {
       padding: 20px;
-      overflow-y: auto;
-      height: 100%;
+      /* removed: height: 100%; to allow natural flow on mobile */
     }
 
-    /* Extra class to hide items */
     .hidden {
       display: none !important;
     }
@@ -88,6 +89,7 @@
       text-align: center;
       min-width: 120px;
       box-shadow: 0 2px 4px var(--shadow-color);
+      font-size: 1rem;
     }
     .roadmap-item:hover {
       background: var(--secondary-dark);
@@ -108,7 +110,7 @@
       background: #fff;
       z-index: 9999;
       display: none; /* hidden until a building is clicked */
-      overflow: hidden;
+      overflow: hidden; /* main container hidden - slider handles scroll */
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
@@ -151,7 +153,7 @@
       width: 100%;
       bottom: 60px; 
       background: var(--light-bg);
-      overflow: hidden;
+      overflow: hidden; /* we'll do vertical scroll in each slide */
     }
     .slider-track {
       display: flex;
@@ -162,7 +164,7 @@
     .slide {
       width: 100%;
       padding: 20px;
-      overflow-y: auto;
+      overflow-y: auto; /* each slide can scroll vertically */
       box-sizing: border-box;
       background: #f9f9f9;
     }
@@ -246,9 +248,9 @@
 <body>
   <div class="page-content">
 
+    <!-- Status / Filter Section -->
     <div class="section" style="margin-bottom: 30px;">
       <h2>Status</h2>
-
       <label>Rank: 
         <select id="rankSelect">
           <option value="E1">E-1</option>
@@ -279,31 +281,15 @@
       </label>
       <br><br>
 
-      <label>
-        <input type="checkbox" id="dependentsCk">
-        Has Dependents
-      </label>
-      <br>
-      <label>
-        <input type="checkbox" id="driversCk">
-        Requires Military Driver’s License
-      </label>
-      <br>
-      <label>
-        <input type="checkbox" id="visionCk">
-        Requires Vision / Specialty Services
-      </label>
-      <br>
-      <label>
-        <input type="checkbox" id="intelCk">
-        S2/S3 Intel Access
-      </label>
-      <br><br>
+      <label><input type="checkbox" id="dependentsCk"> Has Dependents</label><br>
+      <label><input type="checkbox" id="driversCk"> Requires Military Driver’s License</label><br>
+      <label><input type="checkbox" id="visionCk"> Requires Vision / Specialty Services</label><br>
+      <label><input type="checkbox" id="intelCk"> S2/S3 Intel Access</label><br><br>
 
       <button id="applyBtn">Apply Filter</button>
     </div>
 
-    <!-- Some static content... -->
+    <!-- Intro Sections -->
     <h1>Welcome to Korea</h1>
     <div class="section">
       <p><strong>Simple description of Korea:</strong> Korea offers a unique blend of modern cities, rich history, and beautiful landscapes. From bustling Seoul to traditional villages, there’s always something to explore.</p>
@@ -324,57 +310,45 @@
       <p><strong>Installable Apps:</strong> “OnPost” (iOS) or “MyArmyPost” (Android).</p>
     </div>
 
-    <!-- Roadmap -->
+
+    <!-- Roadmap Container -->
     <div class="roadmap-container">
       <h2>Inprocessing Roadmap</h2>
       <div class="roadmap">
-
         <div class="roadmap-item" data-building="OneStop" id="oneStopItem">OneStop</div>
         <span class="arrow">→</span>
-
         <div class="roadmap-item" data-building="CIF" id="cifItem">CIF</div>
         <span class="arrow">→</span>
-
         <div class="roadmap-item" data-building="BattalionPart1" id="batt1Item">Battalion Part 1</div>
         <span class="arrow">→</span>
-
         <div class="roadmap-item" data-building="PostOffice" id="postOfficeItem">Post Office</div>
         <span class="arrow">→</span>
-
         <div class="roadmap-item" data-building="BattalionPart2" id="batt2Item">Battalion Part 2</div>
         <span class="arrow">→</span>
-
         <div class="roadmap-item" data-building="Company" id="companyItem">Company</div>
         <span class="arrow">→</span>
-
         <div class="roadmap-item" data-building="BattalionPart3" id="batt3Item">Battalion Part 3</div>
         <span class="arrow">→</span>
-
         <div class="roadmap-item" data-building="Division" id="divisionItem">Division</div>
         <span class="arrow">→</span>
-
         <div class="roadmap-item" data-building="S7010" id="s7010Item">BLDG S7010</div>
         <span class="arrow">→</span>
-
         <div class="roadmap-item" data-building="Housing" id="housingItem">Housing/SLQ</div>
         <span class="arrow">→</span>
-
         <div class="roadmap-item" data-building="MedicalBldg" id="medicalBldgItem">Medical Company</div>
         <span class="arrow">→</span>
-
         <div class="roadmap-item" data-building="MidtownClinic" id="midtownItem">Midtown Clinic</div>
       </div>
     </div>
 
+    <!-- Tips Section -->
     <h2>Tips and Tricks</h2>
     <div class="section">
-      <p><strong>DSN calls:</strong> add 0503 in front of DSN, skip first 3 digits, etc.</p>
-      <p><strong>Cars/Licenses:</strong> JKO Korean Driving License Course, TMP License, etc.</p>
-    </div>
+  <p><strong>DSN calls from your phone: </strong>To call DSN numbers, add 0503 in front of DSN, leave out the first 3 digits, replace the first digit of the remaining with 3</p>	
+  <p><strong>Cars and Licenses: </strong>JKO Korean Driving License Course, JKO Driving License Exam, TMP License Required.</p>
+    </div>	
 
-  </div> <!-- end page-content -->
-
-  <!-- SLIDING CONTAINER -->
+  <!-- Sliding Container -->
   <div class="sliding-container" id="slidingContainer">
     <div class="sliding-header">
       <button class="close-btn" id="closeWindow">Close</button>
