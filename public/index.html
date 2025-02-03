@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Responsive viewport meta tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrated Inprocessing (Responsive)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- User Info and Logout (shown when a user is logged in) -->
+  <div id="userInfo" style="position: fixed; top: 10px; left: 10px; z-index: 11000; display: none;">
+    Logged in as <span id="currentUsername"></span>
+    <button id="userLogoutBtn">Logout</button>
+  </div>
+
+  <!-- User Login Modal -->
+  <div id="userLoginModal" class="modal">
+    <div class="modal-content">
+      <h2>User Login</h2>
+      <label for="loginUsername">Username:</label>
+      <input type="text" id="loginUsername" placeholder="Username">
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" placeholder="Password">
+      <button id="loginBtn">Login</button>
+      <p>Don't have an account? <button id="showRegisterBtn">Register here</button></p>
+    </div>
+  </div>
+
+  <!-- User Registration Modal -->
+  <div id="userRegisterModal" class="modal">
+    <div class="modal-content">
+      <h2>User Registration</h2>
+      <label for="regUsername">Username:</label>
+      <input type="text" id="regUsername" placeholder="Username">
+      <label for="regPassword">Password:</label>
+      <input type="password" id="regPassword" placeholder="Password">
+      <button id="registerBtn">Register</button>
+      <button id="cancelRegisterBtn">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Admin Login Modal -->
+  <div id="adminLoginModal" class="modal">
+    <div class="modal-content">
+      <h2>Admin Login</h2>
+      <label for="adminIdInput">Admin ID:</label>
+      <input type="text" id="adminIdInput" placeholder="Admin ID">
+      <label for="adminPasswordInput">Password:</label>
+      <input type="password" id="adminPasswordInput" placeholder="Password">
+      <button id="adminLoginBtn">Login as Admin</button>
+      <button id="adminLoginCancelBtn">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Admin Panel Modal for editing roadmap data -->
+  <div id="adminPanelModal" class="modal">
+    <div class="modal-content">
+      <h2>Admin Panel - Edit Roadmap</h2>
+      <label for="buildingSelect">Select Building:</label>
+      <select id="buildingSelect"></select>
+      <label for="sectionSelect">Select Section:</label>
+      <select id="sectionSelect"></select>
+      <br>
+      <button id="addBuildingBtn">Add New Building</button>
+      <button id="addSectionBtn">Add New Section</button>
+      <button id="deleteSectionBtn">Delete Section</button>
+      <button id="deleteBuildingBtn">Delete Building</button>
+      <br><br>
+      <label for="sectionTitleInput">Section Title:</label>
+      <input type="text" id="sectionTitleInput">
+      <label for="sectionDescInput">Description:</label>
+      <textarea id="sectionDescInput"></textarea>
+      <label for="sectionReqInput">Requirements (comma separated):</label>
+      <textarea id="sectionReqInput"></textarea>
+      <label for="sectionNeedInput">Need to Complete on Site (comma separated):</label>
+      <textarea id="sectionNeedInput"></textarea>
+      <label for="sectionPOCInput">POC:</label>
+      <input type="text" id="sectionPOCInput">
+      <label for="sectionDSNInput">DSN:</label>
+      <input type="text" id="sectionDSNInput">
+      <label for="sectionHoursInput">Hours of Operation:</label>
+      <input type="text" id="sectionHoursInput">
+      <button id="saveSectionBtn">Save Changes</button>
+      <button id="closeAdminPanelBtn">Close</button>
+    </div>
+  </div>
+
+  <!-- Admin Login/Panel link (shown when an admin logs in) -->
+  <div id="adminLoginLink" style="position: fixed; top: 10px; right: 10px; z-index: 11000; display: none;">
+    <button id="openAdminPanelBtn">Admin Panel</button>
+    <button id="adminLogoutBtn">Logout Admin</button>
+  </div>
+
+  <div class="page-content">
+    <!-- Status / Filter Section -->
+    <div class="section" style="margin-bottom: 30px;">
+      <h2>Status</h2>
+      <label>Rank: 
+        <select id="rankSelect">
+          <option value="E1">E-1</option>
+          <option value="E2">E-2</option>
+          <option value="E3">E-3</option>
+          <option value="E4">E-4</option>
+          <option value="E5">E-5</option>
+          <option value="E6">E-6</option>
+          <option value="E7">E-7</option>
+          <option value="E8">E-8</option>
+          <option value="E9">E-9</option>
+          <option value="WO1">WO1</option>
+          <option value="CW2">CW2</option>
+          <option value="CW3">CW3</option>
+          <option value="CW4">CW4</option>
+          <option value="CW5">CW5</option>
+          <option value="O1">O-1</option>
+          <option value="O2">O-2</option>
+          <option value="O3">O-3</option>
+          <option value="O4">O-4</option>
+          <option value="O5">O-5</option>
+          <option value="O6">O-6</option>
+          <option value="O7">O-7</option>
+          <option value="O8">O-8</option>
+          <option value="O9">O-9</option>
+          <option value="O10">O-10</option>
+        </select>
+      </label>
+      <br><br>
+      <label><input type="checkbox" id="dependentsCk"> Has Dependents</label><br>
+      <label><input type="checkbox" id="driversCk"> Requires Military Driver’s License</label><br>
+      <label><input type="checkbox" id="visionCk"> Requires Vision / Specialty Services</label><br>
+      <label><input type="checkbox" id="intelCk"> S2/S3 Intel Access</label><br><br>
+      <button id="applyBtn">Apply Filter</button>
+    </div>
+
+    <!-- Intro Sections -->
+    <h1>Welcome to Korea</h1>
+    <div class="section">
+      <p><strong>Simple description of Korea:</strong> Korea offers a unique blend of modern cities, rich history, and beautiful landscapes. From bustling Seoul to traditional villages, there’s always something to explore.</p>
+      <p><strong>Description of Culture:</strong> Korean culture values respect, hierarchy, and group harmony. You’ll notice customs like bowing, removing shoes indoors, and sharing food in communal dishes.</p>
+      <p><strong>The KATUSA Program:</strong> KATUSA (Korean Augmentation to the U.S. Army) soldiers serve alongside U.S. forces, bridging cultural and language gaps while supporting mission readiness.</p>
+    </div>
+
+    <h1>Welcome to Our Office</h1>
+    <div class="section">
+      <p><strong>Description of the HHBN OSJA Office:</strong> The HHBN OSJA handles legal support, advice, and documentation for the unit.</p>
+      <p><strong>Jobs and Chain of Command (COC):</strong>  
+        <br>• <strong>Foundations: </strong> COL Babb, LTC Runyans, WO1 Delgado, SGM Cabrera 
+        <br>• <strong>Officers: </strong> MAJ Preston, CPT Baxter, CPT Strickland, CPT Smith    
+        <br>• <strong>NCO: </strong> SSG Jackson, SFC Bradley, SFC Spencer, SSG Winton, SSG OA 
+        <br>• <strong>Korean Counterparts: </strong> 1LT Rhee
+        <br>• <strong>KATUSA: </strong> PFC Kim, PFC Kang
+      </p>
+      <p><strong>Installable Apps:</strong> “OnPost” (iOS) or “MyArmyPost” (Android).</p>
+    </div>
+
+    <!-- Roadmap Container -->
+    <div class="roadmap-container">
+      <h2>Inprocessing Roadmap</h2>
+      <div class="roadmap">
+        <div class="roadmap-item" data-building="OneStop" id="oneStopItem">OneStop</div>
+        <span class="arrow">→</span>
+        <div class="roadmap-item" data-building="CIF" id="cifItem">CIF</div>
+        <span class="arrow">→</span>
+        <div class="roadmap-item" data-building="BattalionPart1" id="batt1Item">Battalion Part 1</div>
+        <span class="arrow">→</span>
+        <div class="roadmap-item" data-building="PostOffice" id="postOfficeItem">Post Office</div>
+        <span class="arrow">→</span>
+        <div class="roadmap-item" data-building="BattalionPart2" id="batt2Item">Battalion Part 2</div>
+        <span class="arrow">→</span>
+        <div class="roadmap-item" data-building="Company" id="companyItem">Company</div>
+        <span class="arrow">→</span>
+        <div class="roadmap-item" data-building="BattalionPart3" id="batt3Item">Battalion Part 3</div>
+        <span class="arrow">→</span>
+        <div class="roadmap-item" data-building="Division" id="divisionItem">Division</div>
+        <span class="arrow">→</span>
+        <div class="roadmap-item" data-building="S7010" id="s7010Item">BLDG S7010</div>
+        <span class="arrow">→</span>
+        <div class="roadmap-item" data-building="Housing" id="housingItem">Housing/SLQ</div>
+        <span class="arrow">→</span>
+        <div class="roadmap-item" data-building="MedicalBldg" id="medicalBldgItem">Medical Company</div>
+        <span class="arrow">→</span>
+        <div class="roadmap-item" data-building="MidtownClinic" id="midtownItem">Midtown Clinic</div>
+      </div>
+    </div>
+
+    <!-- Tips Section -->
+    <h2>Tips and Tricks</h2>
+    <div class="section">
+      <p><strong>DSN calls from your phone: </strong>To call DSN numbers, add 0503 in front of DSN, leave out the first 3 digits, replace the first digit of the remaining with 3</p> 
+      <p><strong>Cars and Licenses: </strong>JKO Korean Driving License Course, JKO Driving License Exam, TMP License Required.</p>
+    </div> 
+  </div>
+
+  <!-- Sliding Container -->
+  <div class="sliding-container" id="slidingContainer">
+    <div class="sliding-header">
+      <button class="close-btn" id="closeWindow">Close</button>
+      <h2 id="modalTitle">Details</h2>
+    </div>
+    <div class="slider">
+      <div class="slider-track" id="sliderTrack"></div>
+    </div>
+    <div class="nav-buttons">
+      <button id="prevBtn">Prev</button>
+      <button id="nextBtn">Next</button>
+    </div>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>

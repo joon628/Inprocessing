@@ -1,0 +1,367 @@
+{
+    "OneStop": {
+      "name": "OneStop",
+      "sections": [
+        {
+          "Section": "OneStop Inprocessing",
+          "Description": "This is your first step for inprocessing before HHBN.",
+          "Requirements": [""],
+          "NeedToCompleteOnSite": ["Complete Inprocessing, TRICARE", "Hearing Test"],
+          "POC": "OneStop",
+          "DSN": "N/A",
+          "Hours": "Mon-Fri 0800-1700"
+        }
+      ]
+    },
+    "CIF": {
+      "name": "CIF",
+      "sections": [
+        {
+          "Section": "Central Issue Facility",
+          "Description": "Pick up gear from CIF. Usually done collectively on Thursday with your sponser.",
+          "Requirements": ["DA 4187"],
+          "NeedToCompleteOnSite": ["Obtain gear", "Keep receipts for S4"],
+          "POC": "CIF Clerk",
+          "DSN": "123-4567",
+          "Hours": "Thu recommended"
+        }
+      ]
+    },
+    "BattalionPart1": {
+      "name": "Battalion Part 1",
+      "sections": [
+        {
+          "Section": "S1 BLDG 7300, 2nd Floor",
+          "Description": "Start of Battalion Inprocessing, Guides to Inprocessing in Korea",
+          "Requirements": [
+            "Copy of PCS Order",
+            "DD93",
+            "Signed DA31",
+            "Pinpoint PCS Order",
+            "SGLI/SGLV/PRR"
+          ],
+          "NeedToCompleteOnSite": [
+            "Complete Personal Data Sheet",
+            "If CSP, complete NEO packet",
+            "Update religious preference"
+          ],
+          "POC": "S1 Civilian Services/KATUSA",
+          "DSN": "7571775 / 7567387",
+          "Hours": "Mon-Fri, 0900-1600"
+        },
+        {
+          "Section": "HHBN Career Counselor, BLDG 7300, 2nd Floor",
+          "Description": "Mandatory for SSG and below (Retention Brief)",
+          "Requirements": [],
+          "NeedToCompleteOnSite": ["Attend retention briefing"],
+          "POC": "Career Counselor",
+          "DSN": "-",
+          "Hours": "-"
+        }
+      ]
+    },
+    "PostOffice": {
+      "name": "Post Office",
+      "sections": [
+        {
+          "Section": "Cowan Post Office (BLDG P6809)",
+          "Description": "Pick up mail, set up mailbox if needed",
+          "Requirements": ["Pin Point Order"],
+          "NeedToCompleteOnSite": ["Register or update mailing address"],
+          "POC": "-",
+          "DSN": "-",
+          "Hours": "-"
+        }
+      ]
+    },
+    "BattalionPart2": {
+      "name": "Battalion Part 2",
+      "sections": [
+        {
+          "Section": "S3, BLDG 7300, 2nd Floor",
+          "Description": "Tribe In-Processing",
+          "Requirements": [
+            {
+              "id": "range operations",
+              "title": "Range Operations Professional Development (ROPD) Phase 4A Course",
+              "url": "https://www.lms.army.mil/Saba/Web/ALMS",
+              "frequency": "",
+              "note": "Required for E6-E8, W01-CW2, O1-O4"
+            },
+            "CIF Reciept",
+            "POBOX Number"
+          ],
+          "NeedToCompleteOnSite": [],
+          "POC": "S3 KATUSA",
+          "DSN": "7567390",
+          "Hours": "-"
+        },
+        {
+          "Section": "S6",
+          "Description": "Get access to NIPR and Centrix accounts",
+          "Requirements": [
+            {
+              "id": "DODCyber",
+              "title": "DOD Cyber Awareness",
+              "url": "https://cs.signal.army.mil/",
+              "frequency": "",
+              "note": "Do not use JKO"
+            },
+            {
+              "id": "MilConnect",
+              "title": "Update MILCONNECT",
+              "url": "https://milconnect.dmdc.osd.mil/milconnect/",
+              "frequency": "",
+              "note": ""
+            },
+            {
+              "id": "AUPForm",
+              "title": "Complete Acceptable Use Policy Form",
+              "url": "https://cs.signal.army.mil/UserMngmt/aup/aupsig.asp",
+              "frequency": "",
+              "note": "For NIPR"
+            },
+            {
+              "id": "ATCTS",
+              "title": "Update ATCTS profile",
+              "url": "https://atc.us.army.mil/iastar/profile/index.php",
+              "frequency": "",
+              "note": ""
+            }
+          ],
+          "NeedToCompleteOnSite": [],
+          "POC": "S6 KATUSA",
+          "DSN": "7567392",
+          "Hours": "-"
+        }
+      ]
+    },
+    "Company": {
+      "name": "Company",
+      "sections": [
+        {
+          "Section": "Orderly Room",
+          "Description": "Inprocessing at the company level",
+          "Requirements": ["Personal Data Sheet"],
+          "NeedToCompleteOnSite": [],
+          "POC": "Orderly KATUSA",
+          "DSN": "7571878",
+          "Hours": "-"
+        },
+        {
+          "Section": "CBRN",
+          "Description": "Receive CBRN gear",
+          "Requirements": [],
+          "NeedToCompleteOnSite": ["Pick up/verify gear"],
+          "POC": "CBRN NCO",
+          "DSN": "7372273",
+          "Hours": "-"
+        },
+        {
+          "Section": "Arms Room",
+          "Description": "Receive personal weapons or sign a weapons card",
+          "Requirements": ["Write weapons card"],
+          "NeedToCompleteOnSite": ["Confirm personal weapons assignment"],
+          "POC": "-",
+          "DSN": "-",
+          "Hours": "-"
+        }
+      ]
+    },
+    "BattalionPart3": {
+      "name": "Battalion Part 3",
+      "sections": [
+        {
+          "Section": "S4",
+          "Description": "Report filings from the CIF",
+          "Requirements": ["Completed CIF receipt"],
+          "NeedToCompleteOnSite": [],
+          "POC": "S4 NCOIC/S4 KATUSA/S4 Civilian",
+          "DSN": "7656357 / 7567438 / 7567436",
+          "Hours": "-"
+        },
+        {
+          "Section": "S2, BLDG 7300, 2nd Floor",
+          "Description": "Certifications & Security, Submit certifications",
+          "Requirements": [
+            {
+              "id": "antiterror",
+              "title": "Level I Antiterrorism Awareness Training [JKO prefix=JS course=US007]",
+              "url": "https://jkodirect.jten.mil/",
+              "frequency": "annual (all DoD personnel)",
+              "note": ""
+            },
+            {
+              "id": "sere100",
+              "title": "SERE 100.2 [JKO prefix=J3T course=A-US1329]",
+              "url": "https://jkodirect.jten.mil/",
+              "frequency": "every 24 months (all DoD personnel)",
+              "note": ""
+            },
+            {
+              "id": "infosec",
+              "title": "Information Security Program Training",
+              "url": "https://www.cdse.edu/Training/eLearning/lF011",
+              "frequency": "annual (all DoD personnel)",
+              "note": "(DO NOT LOG IN WITH YOUR CAC. MAKE A NEW ACCOUNT WITHOUT CAC)"
+            },
+            {
+              "id": "managingPersonnel",
+              "title": "Managing Personnel w/ Security Clearances",
+              "url": "https://learn.atis.army.mil/moodle/course/",
+              "frequency": "annual (Civilian Supervisors & all Military)",
+              "note": "(Search “Security Training – Annual Awareness Managing Personnel with Clearances/Access to Classified Information”)"
+            },
+            {
+              "id": "unauthorizedDisclosure",
+              "title": "Unauthorized Disclosure of Classified Information and CUI",
+              "url": "https://www.cdse.edu/Training/eLearning/lF130/",
+              "frequency": "annual",
+              "note": "(DO NOT LOG IN WITH YOUR CAC. MAKE A NEW ACCOUNT WITHOUT CAC)"
+            },
+            {
+              "id": "derivativeClass",
+              "title": "Derivative Classification",
+              "url": "https://securityawareness.usalearning.gov/derivative/index.htm",
+              "frequency": "annual (all DoD personnel)",
+              "note": ""
+            },
+            {
+              "id": "markingClass",
+              "title": "Marking Classified",
+              "url": "https://securityawareness.usalearning.gov/markings/index.html",
+              "frequency": "annual (all DoD personnel)",
+              "note": ""
+            },
+            {
+              "id": "dodCui",
+              "title": "DOD CUI Training Certificate",
+              "url": "https://securityawareness.usalearning.gov/cui/index.html",
+              "frequency": "annual (all DoD personnel)",
+              "note": ""
+            },
+            {
+              "id": "indoPacom",
+              "title": "USINDOPACOM Intelligence Oversight [JKO prefix=PAC course=US009]",
+              "url": "https://jkodirect.jten.mil/",
+              "frequency": "annual (only S2/C2/C39 CEMA with intel mission)",
+              "note": "(**Re-check if still required**)"
+            },
+            {
+              "id": "isoprep",
+              "title": "ISOPREP Manager Validation",
+              "url": "#",
+              "frequency": "",
+              "note": ""
+            }
+          ],
+          "NeedToCompleteOnSite": ["Sign NDA/NATO agreements", "SF312 NDA", "NATO Indoctrination Brief"],
+          "POC": "S2 SGT/KATUSA",
+          "DSN": "7567389 / 7567388",
+          "Hours": "-"
+        }
+      ]
+    },
+    "Division": {
+      "name": "Division",
+      "sections": [
+        {
+          "Section": "C8, BLDG 6500, 3rd floor",
+          "Description": "Government Travel Credit Card (GTCC) issuance",
+          "Requirements": [
+            "Travel Card Training 101",
+            "DTS Cert",
+            "DTS 101",
+            "TDY Travel Policies Cert",
+            "GTCC Statement of Understanding"
+          ],
+          "NeedToCompleteOnSite": ["File GTCC application if you don't have it"],
+          "POC": "-",
+          "DSN": "-",
+          "Hours": "-"
+        },
+        {
+          "Section": "Badging",
+          "Description": "Generates badges for entering Division (must have sponsor initially)",
+          "Requirements": ["CI TARP Briefing at 0850 @BLDG 6500, Security Briefing SETA"],
+          "NeedToCompleteOnSite": ["Obtain 2ID Entrance Badge for Classified Areas"],
+          "POC": "Badging",
+          "DSN": "7567244 / 7565016",
+          "Hours": "-"
+        },
+        {
+          "Section": "OSJA Office, BLDG 6500, 3rd Floor",
+          "Description": "Legal assistance, claims, and advice",
+          "Requirements": [
+            "STP",
+            "Copy of Orders and Amendments (1st term JA submit DCC & OBC orders)",
+            "Last OER/NCOER/AER (digital copy of evaluation sheet)",
+            "Copy of Current Profile",
+            "Statement of Good Standing (JAs Only)",
+            "JATSOC Completion Certificate (JAs Only)"
+          ],
+          "NeedToCompleteOnSite": ["Admin Data Sheet", "FB Bios"],
+          "POC": "OSJA KATUSA",
+          "DSN": "7563572",
+          "Hours": "Mon-Fri, 0930 - 1130, 1300 - 1630"
+        }
+      ]
+    },
+    "S7010": {
+      "name": "BLDG S7010",
+      "sections": [
+        {
+          "Section": "TMP License",
+          "Description": "Obtain a TMP (Transport Motor Pool) license if required",
+          "Requirements": [],
+          "NeedToCompleteOnSite": ["Present driver’s license, complete required forms"],
+          "POC": "-",
+          "DSN": "-",
+          "Hours": "-"
+        }
+      ]
+    },
+    "Housing": {
+      "name": "Housing/SLQ",
+      "sections": [
+        {
+          "Section": "Housing Office (BLDG 6400, 3rd Floor)",
+          "Description": "(For Officers, E7+, or accompanied) Housing or SLQ assignment. For Unaccompanied E-6 and below, Visit P6701",
+          "Requirements": [],
+          "NeedToCompleteOnSite": ["Confirm eligibility, pick up keys if assigned"],
+          "POC": "Housing Office",
+          "DSN": "7572647",
+          "Hours": "-"
+        }
+      ]
+    },
+    "MedicalBldg": {
+      "name": "Medical Company COF",
+      "sections": [
+        {
+          "Section": "Medical Inprocessing, BLDG 7309 RM 210",
+          "Description": "TCCC Level 1, Phase 1 PHA, Immunization records check",
+          "Requirements": ["Complete Phase 1 PHA through AKO", "Ensure immunization record is updated"],
+          "NeedToCompleteOnSite": ["Finish missing immunizations", "Finalize PHA"],
+          "POC": "-",
+          "DSN": "-",
+          "Hours": "-"
+        }
+      ]
+    },
+    "MidtownClinic": {
+      "name": "Midtown Clinic (BLDG 6370)",
+      "sections": [
+        {
+          "Section": "Vision / Additional Medical Support",
+          "Description": "Check if vision or other specialty services are required",
+          "Requirements": ["Immunization Vaccine Receipt"],
+          "NeedToCompleteOnSite": ["Vision", "Immunization"],
+          "POC": "-",
+          "DSN": "-",
+          "Hours": "-"
+        }
+      ]
+    }
+  }
+  

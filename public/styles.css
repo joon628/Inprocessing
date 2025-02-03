@@ -1,0 +1,304 @@
+/* Basic reset & styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #2196F3;
+  --primary-dark:  #1976D2;
+  --secondary-color: #4CAF50;
+  --secondary-dark: #388E3C;
+  --light-bg: #f9f9f9;
+  --text-color: #333;
+  --header-bg: #ddd;
+  --card-bg: #fff;
+  --shadow-color: rgba(0,0,0,0.1);
+}
+
+body {
+  font-family: "Roboto", "Arial", sans-serif;
+  background: var(--light-bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  color: var(--text-color);
+}
+
+.page-content {
+  padding: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+h1, h2, h3 {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+strong {
+  color: var(--text-color);
+}
+
+.section {
+  margin-bottom: 30px;
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Roadmap area */
+.roadmap-container {
+  margin-bottom: 40px;
+}
+
+.roadmap-container h2 {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.roadmap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.roadmap-item {
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  min-width: 120px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  font-size: 1rem;
+}
+
+.roadmap-item:hover {
+  background: var(--secondary-dark);
+}
+
+.arrow {
+  font-size: 1.2rem;
+  color: #333;
+  user-select: none;
+}
+
+/* Full-window sliding container */
+.sliding-container {
+  position: fixed;
+  top: calc((100vh - 90%) / 2);
+  left: calc((100vw - 95%) / 2);
+  width: 95%;
+  height: 90%;
+  background: #fff;
+  z-index: 9999;
+  display: none;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+/* SLIDING HEADER */
+.sliding-header {
+  background: var(--header-bg);
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+#modalTitle {
+  margin: 0;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+  background: #222;
+}
+
+.slider {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  bottom: 60px;
+  background: var(--light-bg);
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  padding: 20px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  background: #f9f9f9;
+}
+
+/* Slide content */
+.section-block {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-block h3 {
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.section-block p {
+  margin-bottom: 8px;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* Checklists */
+ul.checklist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.checklist li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+ul.checklist label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+ul.checklist input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+/* Navigation buttons (Prev/Next) */
+.nav-buttons {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-buttons button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  transition: background-color 0.3s, opacity 0.3s;
+  font-size: 1rem;
+}
+
+.nav-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.nav-buttons button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#prevBtn::before {
+  content: "< ";
+  margin-right: 5px;
+}
+
+#nextBtn::after {
+  content: " >";
+  margin-left: 5px;
+}
+
+/* Modal styles for login & admin panels */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.modal-content input, .modal-content textarea, .modal-content select, .modal-content button {
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+}
+
+/* Admin login link (upper right) */
+#adminLoginLink {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 11000;
+  display: none;
+}
+
+#adminLoginLink button {
+  margin-left: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
